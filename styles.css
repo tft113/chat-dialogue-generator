@@ -109,28 +109,27 @@ textarea {
 
 @media (max-width: 480px) {
   .warning-message {
-    font-size: 10px; /* ✅ 在小屏幕（480px以下）时，字体变小 */
+    font-size: 10px; /* ✅ 让警告文字更小 */
     padding: 6px;
   }
 
-  #input-section {
-    transform: translateY(-40px); /* ✅ 适当向上移动 */
-    padding-bottom: 60px; /* ✅ 给生成按钮留出空间 */
+  .chat-container {
+    height: 85vh; /* ✅ 让整个容器高度减少，避免超出 */
   }
 
-  #toggle-input-btn {
-    display: block; /* ✅ 确保 `-` 按钮不会消失 */
-    text-align: center;
-    font-size: 20px;
+  .chat-window {
+    flex: 1;
+    min-height: 150px; /* ✅ 确保不会消失 */
+  }
+
+  #input-section {
+    max-height: 250px; /* ✅ 限制输入框最大高度 */
+    transform: translateY(-20px); /* ✅ 向上移动 */
   }
 
   #generate-btn {
-    position: fixed;
-    bottom: 10px; /* ✅ 让按钮浮动在底部，而不覆盖输入框 */
-    left: 50%;
-    transform: translateX(-50%); /* ✅ 居中 */
-    width: 90%; /* ✅ 适当缩小按钮宽度 */
-    max-width: 400px;
-    z-index: 1000; /* ✅ 确保它不会被其他元素遮挡 */
+    position: relative;
+    bottom: 0;
+    width: 100%;
   }
 }
