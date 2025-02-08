@@ -21,7 +21,7 @@ body, html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: calc(100vh - env(safe-area-inset-bottom));  /* ✅ 让按钮不会被挡住 */
+  height: 100vh;  /* ✅ 让容器始终占满屏幕 */
   overflow: hidden;
 }
 
@@ -29,7 +29,7 @@ body, html {
   flex: 1; /* 利用可能なスペースを動的に占有 */
   overflow-y: auto;
   padding: 15px;
-  min-height: 200px; /* 确保不会完全消失 */
+  min-height: 250px; /* ✅ 适当增加最小高度，避免完全消失 */
   background-color: #fff;
   transition: height 0.3s ease; /* スムーズな高さの変化 */
 }
@@ -51,7 +51,7 @@ body, html {
 }
 
 #input-section {
-  position: sticky; /* ✅ 确保输入框固定在底部 */
+  position: relative; /* ✅ 避免完全消失 */
   bottom: 0;
   width: 100%;
   max-height: 350px; /* 高さを増やし、すべての内容が表示されるようにする */
@@ -71,7 +71,7 @@ input {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
-  width: 100%; /* 親要素に適応するように幅を調整 */
+  width: 100%; /* 親要素に適応するように幅を调整 */
 }
 
 textarea {
@@ -93,6 +93,8 @@ textarea {
   font-size: 16px; /* ボタンのフォントサイズを拡大 */
   width: 100%; /* ボタンが利用可能な幅を占めるようにする */
   text-align: center;
+  position: sticky;  /* ✅ 确保按钮不会被推到底部 */
+  bottom: 10px;
 }
 
 #generate-btn:hover {
