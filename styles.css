@@ -111,8 +111,8 @@ textarea {
   .warning-message {
     font-size: 10px; /* ✅ 让警告文字更小 */
     padding: 6px;
-    position: relative; /* ✅ 避免被 transform 影响 */
-    z-index: 1000; /* ✅ 确保警告信息不会消失 */
+    position: relative;
+    z-index: 1000; /* ✅ 确保警告信息不会被盖住 */
   }
 
   .chat-container {
@@ -133,15 +133,23 @@ textarea {
     position: relative;
   }
 
-  /* ✅ 修复隐藏展开按钮消失的问题 */
+  /* ✅ 让隐藏/展开按钮始终可见 */
   #toggle-input-btn {
-    position: absolute; /* 让它固定在输入框上方 */
-    bottom: 100%; /* 让它永远在 #input-section 之上 */
-    left: 0;
-    width: 100%;
+    position: fixed; /* ✅ 让它固定在屏幕的底部 */
+    bottom: 10px; /* ✅ 让它始终可见 */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
     background: #fff;
-    z-index: 500; /* 确保它不会被隐藏 */
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    z-index: 1000; /* ✅ 确保按钮在最前 */
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
   }
 }
+
 
 
