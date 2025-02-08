@@ -111,26 +111,26 @@ textarea {
   .warning-message {
     font-size: 10px; /* ✅ 让警告文字更小 */
     padding: 6px;
+    position: relative; /* ✅ 避免被 transform 影响 */
+    z-index: 1000; /* ✅ 确保警告信息不会消失 */
   }
 
   .chat-container {
-    height: calc(100vh - 50px); /* ✅ 整体高度减少，避免内容超出 */
-    transform: translateY(-30px); /* ✅ 让整个聊天容器整体上移 */
+    height: calc(100vh - 50px); /* ✅ 确保不会超出屏幕 */
+    display: flex;
+    flex-direction: column;
   }
 
-  .chat-window {
-    min-height: 150px; /* ✅ 避免聊天窗口过小 */
+  #chat-window {
+    flex-grow: 1; /* ✅ 让聊天窗口动态占据可用空间 */
+    transition: height 0.3s ease-in-out;
   }
 
-  #input-section {
-    transform: translateY(-30px); /* ✅ 让输入框区域上移 */
-  }
-
-  #generate-btn {
-    transform: translateY(-30px); /* ✅ 让生成按钮同步上移 */
-  }
-
+  #input-section,
+  #generate-btn,
   #toggle-input-btn {
-    transform: translateY(-30px); /* ✅ 让“展开/隐藏”按钮也上移 */
+    transform: translateY(-30px); /* ✅ 让所有底部元素同步上移 */
+    position: relative; /* ✅ 避免受 flex 影响 */
   }
 }
+
