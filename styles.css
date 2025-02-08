@@ -21,7 +21,7 @@ body, html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 40px); /* 减去警告栏的高度 */
+  height: calc(100vh - env(safe-area-inset-bottom));  /* ✅ 让按钮不会被挡住 */
   overflow: hidden;
 }
 
@@ -51,6 +51,8 @@ body, html {
 }
 
 #input-section {
+  position: sticky; /* ✅ 确保输入框固定在底部 */
+  bottom: 0;
   width: 100%;
   max-height: 350px; /* 高さを増やし、すべての内容が表示されるようにする */
   padding: 15px;
