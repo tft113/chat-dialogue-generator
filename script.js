@@ -49,7 +49,7 @@ document.getElementById("generate-btn").addEventListener("click", async () => {
   };
 
   try {
-    const response = await fetch("http://127.0.0.1:5000/generate_dialogue", {
+    const response = await fetch("https://chat-api-mvg2.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
