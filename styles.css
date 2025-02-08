@@ -111,43 +111,13 @@ textarea {
   .warning-message {
     font-size: 10px; /* ✅ 让警告文字更小 */
     padding: 6px;
-    position: relative;
-    z-index: 1000; /* ✅ 确保警告信息不会被盖住 */
   }
 
-  .chat-container {
-    height: calc(100vh - 50px); /* ✅ 确保不会超出屏幕 */
-    display: flex;
-    flex-direction: column;
-  }
-
-  #chat-window {
-    flex-grow: 1; /* ✅ 让聊天窗口动态占据可用空间 */
-    transition: height 0.3s ease-in-out;
-  }
-
-  /* ✅ 让输入框和生成按钮整体上移 */
+  /* ✅ 让输入框、生成按钮、隐藏按钮整体上移 */
   #input-section,
-  #generate-btn {
-    transform: translateY(-30px);
-    position: relative;
-  }
-
-  /* ✅ 让隐藏/展开按钮始终可见 */
+  #generate-btn,
   #toggle-input-btn {
-    position: fixed; /* ✅ 让它固定在屏幕的底部 */
-    bottom: 10px; /* ✅ 让它始终可见 */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 120px;
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 20px;
-    z-index: 1000; /* ✅ 确保按钮在最前 */
-    text-align: center;
-    padding: 8px 12px;
-    font-size: 14px;
-    cursor: pointer;
+    transform: translateY(-30px);
   }
 }
 
