@@ -114,22 +114,19 @@ textarea {
   }
 
   .chat-container {
-    height: 85vh; /* ✅ 让整个容器高度减少，避免超出 */
+    height: calc(100vh - 50px); /* ✅ 整体高度减少 */
+    transform: translateY(-30px); /* ✅ 让整个容器整体上移 */
   }
 
   .chat-window {
-    flex: 1;
     min-height: 150px; /* ✅ 确保不会消失 */
   }
 
   #input-section {
-    max-height: 250px; /* ✅ 限制输入框最大高度 */
-    transform: translateY(-20px); /* ✅ 向上移动 */
+    transform: translateY(-30px); /* ✅ 让输入框也上移 */
   }
 
   #generate-btn {
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    transform: translateY(-30px); /* ✅ 让生成按钮也上移 */
   }
 }
