@@ -21,7 +21,7 @@ body, html {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  height: 100vh;  /* ✅ 让容器始终占满屏幕 */
+  height: calc(100vh - 40px); /* 减去警告栏的高度 */
   overflow: hidden;
 }
 
@@ -29,7 +29,7 @@ body, html {
   flex: 1; /* 利用可能なスペースを動的に占有 */
   overflow-y: auto;
   padding: 15px;
-  min-height: 250px; /* ✅ 适当增加最小高度，避免完全消失 */
+  min-height: 200px; /* 确保不会完全消失 */
   background-color: #fff;
   transition: height 0.3s ease; /* スムーズな高さの変化 */
 }
@@ -44,9 +44,6 @@ body, html {
   font-size: 20px;
   border-top: 1px solid #ddd;
   text-align: center;
-  position: sticky;  /* ✅ 确保按钮始终可见 */
-  top: 0;
-  z-index: 10;  /* ✅ 确保按钮不会被隐藏 */
 }
 
 #toggle-input-btn:hover {
@@ -54,8 +51,6 @@ body, html {
 }
 
 #input-section {
-  position: relative; /* ✅ 避免完全消失 */
-  bottom: 0;
   width: 100%;
   max-height: 350px; /* 高さを増やし、すべての内容が表示されるようにする */
   padding: 15px;
@@ -67,7 +62,6 @@ body, html {
   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* アニメーション */
   overflow: hidden; /* はみ出した内容を非表示 */
   flex-shrink: 0;
-  min-height: 50px; /* ✅ 确保不会完全消失 */
 }
 
 input {
@@ -75,7 +69,7 @@ input {
   border: 1px solid #ddd;
   border-radius: 5px;
   font-size: 14px;
-  width: 100%; /* 親要素に適応するように幅を调整 */
+  width: 100%; /* 親要素に適応するように幅を調整 */
 }
 
 textarea {
@@ -97,8 +91,6 @@ textarea {
   font-size: 16px; /* ボタンのフォントサイズを拡大 */
   width: 100%; /* ボタンが利用可能な幅を占めるようにする */
   text-align: center;
-  position: sticky;  /* ✅ 确保按钮不会被推到底部 */
-  bottom: 10px;
 }
 
 #generate-btn:hover {
