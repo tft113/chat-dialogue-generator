@@ -101,8 +101,15 @@ textarea {
   background-color: #fff3cd; /* 警告的黄色背景 */
   color: #856404; /* 深黄色文字 */
   text-align: center;
-  padding: 10px;
-  font-size: 14px;
+  padding: 8px; /* 让警告条稍微变窄一点 */
+  font-size: 12px; /* ✅ 调整字体大小（默认是14px） */
   font-weight: bold;
-  border-bottom: 1px solid #ffeeba; /* 添加轻微的底部边框 */
+  border-bottom: 1px solid #ffeeba;
+}
+
+@media (max-width: 480px) {
+  .warning-message {
+    font-size: 10px; /* ✅ 在小屏幕（480px以下）时，字体变小 */
+    padding: 6px; /* ✅ 让警告条高度变小，减少占用空间 */
+  }
 }
