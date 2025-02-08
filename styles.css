@@ -113,13 +113,12 @@ textarea {
     padding: 6px;
   }
 
-  /* ✅ 让输入框、生成按钮、隐藏按钮整体上移 */
-  #input-section,
-  #generate-btn,
-  #toggle-input-btn {
-    transform: translateY(-30px);
+  /* ✅ 在最底部添加空白，保证所有按钮可见 */
+  .chat-container::after {
+    content: "";
+    display: block;
+    height: 80px; /* ✅ 你可以调整这个高度 */
   }
 }
-
 
 
