@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>チャットダイアログジェネレーター</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="warning-message">
+  生成には時間がかかります。ボタンを押した後、約1分間お待ちください。
+</div>
+  <div class="chat-container">
+    <div class="chat-window" id="chat-window">
+      <!-- チャット内容が動的に読み込まれます -->
+    </div>
+    <button id="toggle-input-btn">-</button>
+    <div class="input-section" id="input-section">
+      <input type="text" id="character1" placeholder="キャラクター1（例: レッド）">
+      <input type="text" id="personality1" placeholder="設定1（例: 狼男）">
+      <input type="text" id="character2" placeholder="キャラクター2（例: ポル）">
+      <input type="text" id="personality2" placeholder="設定2（例: 魔法使い）">
+      <textarea id="scene" placeholder="会話のシナリオ、トピック、その他の設定を入力..."></textarea>
+      <button id="generate-btn">会話を生成</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

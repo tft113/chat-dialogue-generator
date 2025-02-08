@@ -1,0 +1,108 @@
+/* 共通スタイル */
+body, html {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* ページ全体のスクロールを防止 */
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+.chat-container {
+  width: 100%;
+  max-width: 500px; /* 固定幅 */
+  margin: 0 auto; /* 中央配置 */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 40px); /* 减去警告栏的高度 */
+  overflow: hidden;
+}
+
+.chat-window {
+  flex: 1; /* 利用可能なスペースを動的に占有 */
+  overflow-y: auto;
+  padding: 15px;
+  min-height: 200px; /* 确保不会完全消失 */
+  background-color: #fff;
+  transition: height 0.3s ease; /* スムーズな高さの変化 */
+}
+
+#toggle-input-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #ffffff; /* ボタンの背景を白に変更 */
+  color: #007bff; /* ボタンの文字色を青に変更 */
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+#toggle-input-btn:hover {
+  background-color: #f9f9f9; /* ホバー時に背景を若干変更 */
+}
+
+#input-section {
+  width: 100%;
+  max-height: 350px; /* 高さを増やし、すべての内容が表示されるようにする */
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* アニメーション */
+  overflow: hidden; /* はみ出した内容を非表示 */
+  flex-shrink: 0;
+}
+
+input {
+  padding: 12px; /* 内側の余白を増やす */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%; /* 親要素に適応するように幅を調整 */
+}
+
+textarea {
+  padding: 12px; /* 内側の余白を増やす */
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  width: 100%;
+  height: 120px; /* 高さを固定し、縮小を防ぐ */
+}
+
+#generate-btn {
+  padding: 15px; /* ボタンの内側の余白を増やす */
+  background: #ffffff;
+  color: #007bff;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px; /* ボタンのフォントサイズを拡大 */
+  width: 100%; /* ボタンが利用可能な幅を占めるようにする */
+  text-align: center;
+}
+
+#generate-btn:hover {
+  background: #f9f9f9;
+}
+
+.warning-message {
+  background-color: #fff3cd; /* 警告的黄色背景 */
+  color: #856404; /* 深黄色文字 */
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: bold;
+  border-bottom: 1px solid #ffeeba; /* 添加轻微的底部边框 */
+}
