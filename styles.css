@@ -44,6 +44,9 @@ body, html {
   font-size: 20px;
   border-top: 1px solid #ddd;
   text-align: center;
+  position: sticky;  /* ✅ 确保按钮始终可见 */
+  top: 0;
+  z-index: 10;  /* ✅ 确保按钮不会被隐藏 */
 }
 
 #toggle-input-btn:hover {
@@ -64,6 +67,7 @@ body, html {
   transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out; /* アニメーション */
   overflow: hidden; /* はみ出した内容を非表示 */
   flex-shrink: 0;
+  min-height: 50px; /* ✅ 确保不会完全消失 */
 }
 
 input {
