@@ -126,11 +126,22 @@ textarea {
     transition: height 0.3s ease-in-out;
   }
 
+  /* ✅ 让输入框和生成按钮整体上移 */
   #input-section,
-  #generate-btn,
+  #generate-btn {
+    transform: translateY(-30px);
+    position: relative;
+  }
+
+  /* ✅ 修复隐藏展开按钮消失的问题 */
   #toggle-input-btn {
-    transform: translateY(-30px); /* ✅ 让所有底部元素同步上移 */
-    position: relative; /* ✅ 避免受 flex 影响 */
+    position: absolute; /* 让它固定在输入框上方 */
+    bottom: 100%; /* 让它永远在 #input-section 之上 */
+    left: 0;
+    width: 100%;
+    background: #fff;
+    z-index: 500; /* 确保它不会被隐藏 */
   }
 }
+
 
